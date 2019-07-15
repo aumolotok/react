@@ -33,14 +33,3 @@ export class Header extends React.Component<HeaderProps, HeaderState>{
 export interface HeaderProps extends BasePropsInterface{ }
 
 export interface HeaderState extends BaseStateInterface{ }
-
-
-
-
-
-
-// <nav className="navbar navbar-expand-sm bg-light justify-content-center">
-            //     <a className="navbar-brand" href="#">Create</a>
-            //     <a className="navbar-brand" href="#">Find</a>
-            //     <a className="navbar-brand" href="#">Sourses</a>
-            // </nav>
