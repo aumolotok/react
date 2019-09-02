@@ -3,6 +3,7 @@ import { CreateNewCaseCard } from "./NewCaseCard/CreateNew";
 import { SearchCard } from "./SerchCard/SearchCard";
 import { SourseCard } from "./Sourses/SoursesCard";
 import { BaseStateInterface, BasePropsInterface } from "../Common/CommonInterfaces/BaseInterface";
+import { LinkProps, Link } from "../Common/CommonComponents/Link";
 
 export class MainElement extends React.Component<MainProps, MainState>{
 
@@ -35,4 +36,14 @@ enum ShowState {
 
 interface BooleanArray {
     [index: number]: boolean;
+}
+
+
+export class BaseComp{
+    static link = (linkProps : LinkProps) =>{
+        if (linkProps.className == null){
+            return <Link href = {linkProps.href} title = {linkProps.title}/>
+        }
+        return <Link className = {linkProps.className} href = {linkProps.href} title = {linkProps.title} key = {linkProps.title}/>
+    }
 }

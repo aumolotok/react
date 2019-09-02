@@ -3,30 +3,12 @@ import { BasePropsInterface, BaseStateInterface } from "../Common/CommonInterfac
 import { NavBarLink, NavBarLinkProps, NavBar } from "./Nav";
 
 export class Header extends React.Component<HeaderProps, HeaderState>{
-
-    headerClass : string = "text-danger";
-
-    links : NavBarLinkProps[] = [
-        {class : "nav-link", href : "#", title : "Create"},
-        {class : "nav-link", href : "#", title : "Find"},
-        {class : "nav-link", href : "#", title : "Sourses"},
-    ]
-
-    constructor(props: HeaderProps){
-        super(props)
-        this.state = {
-            className : "text-danger"
-        }
-    }
-
     render(){
-        return(
-                <NavBar links = {this.links}/>
-        ) 
-    }
-
-    changeLinkSTate(i: number){
-         
+        return (
+            <header>
+                <NavBar/> 
+            </header>
+        )
     }
 }
 
