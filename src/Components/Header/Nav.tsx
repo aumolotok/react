@@ -2,27 +2,29 @@ import { BasePropsInterface, BaseStateInterface } from "../Common/CommonInterfac
 import React from "react";
 import { LinkProps, Link } from "../Common/CommonComponents/Link";
 import { BaseComp } from "../Main/MainElement";
+import { Bootstrap } from "../Helpers/BootstrapHelper";
 
 export class NavBar extends React.Component<NavBarProps, NavBarSate> {
 
     yandex = "https://www.yandex.ru";
 
     links : LinkProps[] = [
-        { className : "active", title : "Home", href : "yandex"},
-        {title : "About", href : "yandex"},
-        {title : "Work", href : "yandex"},
-        {title : "Propcess", href : "yandex"},
+        { className : "active col-1", title : "Home", href : "yandex"},
+        { className : "active col-1", title : "About", href : "yandex"},
+        { className : "active col-1", title : "Work", href : "yandex"},
+        { className : "active col-1",title : "Propcess", href : "yandex"},
 
     ]
 
     render(){
         return(
             <nav>
-                {this.links.map((p) => BaseComp.link(p))}
-                {/* <a className = "active" h>Home</a>
-                <a>About</a>
-                <a>Work</a>
-                <a>Propcess</a> */}
+                <div className = {Bootstrap.container + "-fluid"} >
+                    <div className = {Bootstrap.rowClass}>
+                        <div className = "col"/>
+                        {this.links.map((p) => BaseComp.link(p))}                        
+                    </div>
+                </div>
             </nav>
         )
     }
