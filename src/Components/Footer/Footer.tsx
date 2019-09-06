@@ -3,7 +3,11 @@ import React from "react";
 
 export class Footer extends React.Component<FooterProps, FooterState>{
     render(){
-        return <h1>Footer</h1>
+        return (
+            <footer>
+                 <h1>Footer</h1>
+            </footer>
+        )
     }
 }
 
