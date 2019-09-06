@@ -1,39 +1,43 @@
 import { BasePropsInterface, BaseStateInterface } from "../Common/CommonInterfaces/BaseInterface";
 import React from "react";
+import { LinkProps, Link } from "../Common/CommonComponents/Link";
+import { BaseComp } from "../Main/MainElement";
+import { Bootstrap } from "../Helpers/BootstrapHelper";
 
 export class NavBar extends React.Component<NavBarProps, NavBarSate> {
-    constructor(props: NavBarProps){
-        super(props);
-        this.state = {
-            className: "navbar navbar-expand-sm bg-dark navbar-dark",
-            links: props.links
-        }
-    }
 
+    yandex = "https://www.yandex.ru";
+
+    links : LinkProps[] = [
+        { className : "active col-1", title : "Home", href : "yandex"},
+        { className : "active col-1", title : "About", href : "yandex"},
+        { className : "active col-1", title : "Work", href : "yandex"},
+        { className : "active col-1",title : "Propcess", href : "yandex"},
+
+    ]
 
     render(){
         return(
-            <nav className = {this.state.className}>
-                <ul className="navbar-nav">
-                    {this.state.links.map( p => this.renderLink(p))}
-                </ul>
+            <nav>
+                <div className = {Bootstrap.container + "-fluid"} >
+                    <div className = {Bootstrap.rowClass}>
+                        <div className = "col"/>
+                        {this.links.map((p) => BaseComp.link(p))}                        
+                    </div>
+                </div>
             </nav>
         )
     }
 
-    renderLink(linkProp : NavBarLinkProps){
-        return(
-            <NavBarLink title = {linkProp.title} href = {linkProp.href} class = {linkProp.class}/>
-        )
-    }
+
 }
 
 export interface NavBarProps extends BasePropsInterface{
-    links: NavBarLinkProps[];    
+   
 }
 
 export interface NavBarSate extends BaseStateInterface{
-    links: NavBarLinkProps[];
+
 }
 
 

@@ -6,4 +6,5 @@ export interface BasePropsInterface {
 export interface BaseStateInterface {
     className?: string | undefined;
     show?: boolean | undefined;
+    key?: number | string;
 }
