@@ -2,17 +2,21 @@ import { BasePropsInterface, BaseStateInterface } from "../Common/CommonInterfac
 import React from "react";
 import { LinkProps, Link } from "../Common/CommonComponents/Link";
 import { BaseComp } from "../Main/MainElement";
-import { Bootstrap } from "../Helpers/BootstrapHelper";
+import { Bootstrap } from "../Helpers/Bootstrap/BootstrapHelper";
 
 export class NavBar extends React.Component<NavBarProps, NavBarSate> {
 
     yandex = "https://www.yandex.ru";
 
+    size = Bootstrap.Grid().columnSized(1);
+
+    commonClass = "active " + this.size;
+
     links : LinkProps[] = [
-        { className : "active col-1", title : "Home", href : "yandex"},
-        { className : "active col-1", title : "About", href : "yandex"},
-        { className : "active col-1", title : "Work", href : "yandex"},
-        { className : "active col-1",title : "Propcess", href : "yandex"},
+        { className : this.commonClass, title : "Home", href : "yandex"},
+        { className : this.commonClass, title : "About", href : "yandex" },
+        { className : this.commonClass, title : "Work", href : "yandex"},
+        { className : this.commonClass,title : "Propcess", href : "yandex"},
 
     ]
 
