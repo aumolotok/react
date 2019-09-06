@@ -40,6 +40,11 @@ nav a.active:hover {
   background: #afa8a852;
 }
 
+footer {
+  background-color: #141414;
+  color: #d7d7d7;
+}
+
 
 /* @import url(http://allfont.ru/allfont.css?fonts=montserrat-bold);
 
