@@ -17,7 +17,6 @@ export class NavBar extends React.Component<NavBarProps, NavBarSate> {
         { className : this.commonClass, title : "About", href : "yandex" },
         { className : this.commonClass, title : "Work", href : "yandex"},
         { className : this.commonClass,title : "Propcess", href : "yandex"},
-
     ]
 
     render(){
